@@ -1,23 +1,14 @@
-import logo from './logo.svg';
+import {useState} from "react";
+import Navbar from "./Components/navbar";
+import Contacts from "./Components/contact/Contacts";
 import './App.css';
 
-function App() {
+const App = () => {
+    const [getContacts,setContacts] = useState([])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Navbar/>
+        <Contacts contacts={getContacts}/>
     </div>
   );
 }
